@@ -3,8 +3,11 @@ import styled from 'styled-components'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import { Link } from 'react-router-dom'
+import { useStateValue } from '../StateProvider'
 
-const Header = () => {
+function Header() {
+  const [{ basket }, dispatch] = useStateValue()
+
   return (
     <Container>
       <Link to='/'>
@@ -43,6 +46,7 @@ const Header = () => {
       <Cart>
         <Link to='/checkout'>
           <ShoppingBasketIcon className='shopping' />
+          <Span>{basket?.length}</Span>
         </Link>
       </Cart>
     </Container>
@@ -118,4 +122,15 @@ const Orders = styled(Signin)``
 
 const Primes = styled(Signin)``
 
-const Cart = styled(Signin)``
+const Cart = styled(Signin)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+`
+
+const Span = styled.span`
+  font-size: 12px;
+  font-weight: 800;
+  margin-left: 5px;
+`
