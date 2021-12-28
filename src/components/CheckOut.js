@@ -7,12 +7,11 @@ const CheckOut = () => {
     <Container>
       <Wrap>
         <CheckOutLeft>
-          <img
+          <SubTotal />
+          {/* <img
             src='https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg '
             alt=''
-          />
-
-          <SubTotal />
+          /> */}
         </CheckOutLeft>
 
         <CheckOutTitle>
@@ -43,7 +42,7 @@ const CheckOutLeft = styled.div`
   margin-right: 10px;
 
   img {
-    width: 50%;
+    width: 80%;
     max-height: 200px;
     margin-right: 10px;
     padding: 10px;
