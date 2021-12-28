@@ -22,13 +22,16 @@ function Header() {
         <input type='text' placeholder='Search' />
       </SearchBox>
       <SearchIcon className='serachIcon' />
-      <Signin>
-        <span>
-          Hello,
-          <br></br>
-          <a href='#'>Sign in</a>
-        </span>
-      </Signin>
+      <Link to='/SignIn'>
+        <Signin>
+          <span>
+            Hello,
+            <br></br>
+            <a>Sign in</a>
+          </span>
+        </Signin>
+      </Link>
+
       <Orders>
         <span>
           Returns
