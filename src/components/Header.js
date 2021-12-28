@@ -2,13 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
     <Container>
-      <Logo>
-        <img src='https://pngimg.com/uploads/amazon/amazon_PNG11.png' alt='' />
-      </Logo>
+      <Link to='/'>
+        <Logo>
+          <img
+            src='https://pngimg.com/uploads/amazon/amazon_PNG11.png'
+            alt=''
+          />
+        </Logo>
+      </Link>
       <SearchBox>
         <input type='text' placeholder='Search' />
       </SearchBox>
@@ -35,7 +41,9 @@ const Header = () => {
         </span>
       </Primes>
       <Cart>
-        <ShoppingBasketIcon className='shopping' />
+        <Link to='/checkout'>
+          <ShoppingBasketIcon className='shopping' />
+        </Link>
       </Cart>
     </Container>
   )
