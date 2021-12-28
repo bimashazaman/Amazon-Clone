@@ -1,15 +1,32 @@
 import { Info } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import { useStateValue } from '../StateProvider'
 
-const Products = ({ title, image, price }) => {
+function Products({ id, title, image, price }) {
+  const [{ basket }, dispatch] = useStateValue()
+
+  const addToBasket = () => {
+    // dispatch some action
+    dispatch({
+      type: 'ADD_TO_BASKET',
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+      },
+    })
+  }
+
   return (
     <div>
       <RowOne>
         <p>{title}</p>
         <strong>{price}</strong>
         <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.roguefour.co.uk%2Fwp-content%2Fuploads%2F2019%2F05%2FAHistoryOfPsychology2e_PB_3D.jpg&f=1&nofb=1https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.roguefour.co.uk%2Fwp-content%2Fuploads%2F2019%2F05%2FAHistoryOfPsychology2e_PB_3D.jpg&f=1&nofb=1'></img>
-        <button>Add to cart</button>
+
+        <button onClick={addToBasket}>Add to cart</button>
       </RowOne>
     </div>
   )
@@ -55,6 +72,7 @@ const RowOne = styled.div`
     border: 1px solid #a88734;
     border-radius: 5px;
     cursor: pointer;
+    padding: 10px;
   }
 
   p {
