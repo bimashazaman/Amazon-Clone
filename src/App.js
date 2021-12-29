@@ -3,9 +3,23 @@ import Header from './components/Header'
 import Home from './components/Home'
 import CheckOut from './components/CheckOut'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import SignIn from './components/SignIn'
+import SignIn from './SignIn'
+import React, { useEffect } from 'react'
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/firestore'
+import 'firebase/compat/auth'
 
 function App() {
+  // useEffect(() => {
+  //   firebase.auth().onAuthStateChanged((authUser) => {
+  //     if (authUser) {
+  //       console.log('User logged in: ', authUser)
+  //     } else {
+  //       console.log('User logged out')
+  //     }
+  //   })
+  // }, [])
+
   return (
     <div className='App'>
       <BrowserRouter>
