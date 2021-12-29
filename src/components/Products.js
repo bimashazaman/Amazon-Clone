@@ -24,7 +24,7 @@ function Products({ id, title, image, price }) {
       <RowOne>
         <p>{title}</p>
         <strong>{price}</strong>
-        <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.roguefour.co.uk%2Fwp-content%2Fuploads%2F2019%2F05%2FAHistoryOfPsychology2e_PB_3D.jpg&f=1&nofb=1https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.roguefour.co.uk%2Fwp-content%2Fuploads%2F2019%2F05%2FAHistoryOfPsychology2e_PB_3D.jpg&f=1&nofb=1'></img>
+        <img src={image} alt='' />
 
         <button onClick={addToBasket}>Add to cart</button>
       </RowOne>
